@@ -1,0 +1,91 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f9f9f9;
+  color: #333;
+}
+
+h2 {
+  margin-top: 40px;
+  color: #444;
+}
+
+label {
+  display: inline-block;
+  width: 160px;
+  margin: 6px 0;
+  font-weight: bold;
+}
+
+input[type="number"],
+input[type="text"],
+input[type="date"],
+select {
+  width: 180px;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 5px 10px;
+  margin-left: 6px;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+#expense-list button {
+  margin-left: 10px;
+  background-color: #eee;
+  color: #333;
+  border: 1px solid #aaa;
+}
+
+#expense-list button:hover {
+  background-color: #ddd;
+}
+
+textarea {
+  font-family: monospace;
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+table {
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+}
+
+th {
+  background-color: #007acc;
+  color: white;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 6px;
+  text-align: left;
+}
+
+input.editable-cell {
+  width: 100%;
+  border: none;
+  background: transparent;
+}
+
+.expense-row {
+  margin: 4px 0;
+  font-family: monospace;
+}

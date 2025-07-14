@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Full Deal Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Deal Header</h2>
+    <form id="deal-header-form">
+      <div style="display: flex; gap: 40px">
+        <!-- Column A: Primary Info -->
+        <div>
+          <label>PO #: <input type="text" name="po" /></label><br />
+          <label>Brand: <input type="text" name="brand" /></label><br />
+          <label>Date: <input type="date" name="date" /></label><br />
+          <label>Vendor: <input type="text" name="vendor" /></label><br />
+          <label>Customer: <input type="text" name="customer" /></label><br />
+        </div>
+        <!-- Column B: Logistics & Terms -->
+        <div>
+          <label>Pickup Location: <input type="text" name="pickup" /></label
+          ><br />
+          <label>Incoterms: <input type="text" name="incoterms" /></label><br />
+          <label>Payment Terms: <input type="text" name="terms" /></label><br />
+          <label>Delivery Location: <input type="text" name="delivery" /></label
+          ><br />
+          <label>ETA: <input type="date" name="eta" /></label><br />
+          <label>Customer PO #: <input type="text" name="cust_po" /></label
+          ><br />
+        </div>
+      </div>
+    </form>
+
+    <hr />
+    <h2>Discount Options</h2>
+    <label
+      >Customer Discount:
+      <input type="number" id="cust-discount" value="0" />
+      <select id="cust-discount-type">
+        <option value="percent">%</option>
+        <option value="amount">Amount</option>
+      </select> </label
+    ><br />
+    <label
+      >Vendor Discount:
+      <input type="number" id="vendor-discount" value="0" />
+      <select id="vendor-discount-type">
+        <option value="percent">%</option>
+        <option value="amount">Amount</option>
+      </select>
+    </label>
+
+    <hr />
+    <h2>Expenses</h2>
+    <div>
+      <input
+        type="number"
+        step="0.01"
+        id="expense-amount"
+        placeholder="Amount"
+      />
+      <select id="expense-type">
+        <option value="Shipping">Shipping</option>
+        <option value="Duties">Duties</option>
+        <option value="Tariffs">Tariffs</option>
+        <option value="EXW">EXW Charges</option>
+        <option value="Warehousing">Warehousing</option>
+        <option value="Misc">Misc</option>
+      </select>
+      <button type="button" onclick="addExpense()">+ Add</button>
+    </div>
+    <div id="expense-list"></div>
+
+    <hr />
+    <h2>Paste & Map Tool</h2>
+    <textarea
+      id="map-box"
+      rows="8"
+      cols="100"
+      placeholder="Paste Excel or CSV rows here..."
+    ></textarea>
+    <div id="column-mapper"></div>
+    <button onclick="mapPastedData()">Map & Import</button>
+
+    <table id="deal-table">
+      <thead>
+        <tr>
+          <th>SKU</th>
+          <th>Model</th>
+          <th>Description</th>
+          <th>Color</th>
+          <th>Size</th>
+          <th>QTY</th>
+          <th>MSRP</th>
+          <th>Cost</th>
+          <th>Buy Ext</th>
+          <th>Price</th>
+          <th>Sell Ext</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <hr />
+    <h2>Results</h2>
+    <button onclick="calculateDeal()">Calculate</button>
+    <div id="results-box">
+      <strong>Total Expense:</strong> $<span id="total-expense">0.00</span
+      ><br />
+      <strong>Gross Profit:</strong> $<span id="gross-profit">0.00</span><br />
+      <strong>Net Profit:</strong> $<span id="net-profit">0.00</span><br />
+      <strong>ROI:</strong> <span id="roi">0%</span><br />
+      <strong>Profit Margin:</strong> <span id="margin">0%</span>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="map-paste-tool.js"></script>
+  </body>
+</html>
